@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Philosophy2Go",
+  base: '/philosophy2go/',
   description: "",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -17,9 +18,7 @@ export default defineConfig({
     container: {
       customContainers: {
         article: '',
-        question: '',
-        overviewheadingpage: '',
-        overviewpage: ''
+        question: ''
       }
     }
   }

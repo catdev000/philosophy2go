@@ -210,38 +210,3 @@
     }
   }
 }
-
-.custom-block.overviewheadingpage {
-  padding: 0;
-  margin: 0;
-
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    color:white;
-    font-weight: bold;
-    font-size: large;
-  }
-  li:hover {
-    color: var(--vp-c-brand-2);
-    cursor: pointer;
-  }
-}
-
-.custom-block.overviewpage {
-  padding: 0;
-  margin: 0;
-
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  li:hover {
-    color: var(--vp-c-brand-2);
-    cursor: pointer;
-  }
-}
