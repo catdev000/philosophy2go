@@ -55,7 +55,7 @@ jobs:
       - name: Setup Capacitor Android
         if: steps.check.outputs.match == 'true'
         run: |
-          npx cap add android
+          mkdir -p android/app/src/main/assets
           npx cap sync android
 
       - name: Build APK and AAB
