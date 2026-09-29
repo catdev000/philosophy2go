@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Philosophy2Go</string>
+    <string name="title_activity_main">Philosophy2Go</string>
+    <string name="package_name">com.philosophy2go.app</string>
+    <string name="custom_url_scheme">com.philosophy2go.app</string>
+</resources>

@@ -1,0 +1,11 @@
+{
+  "appId": "com.philosophy2go.app",
+  "appName": "Philosophy2Go",
+  "webDir": "www",
+
+  "server": {
+    "url": "https://catdev000.github.io/philosophy2go/",
+    "cleartext": false
+  }
+}
+
