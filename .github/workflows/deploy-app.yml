@@ -1,14 +1,11 @@
 name: Build App
 
 on:
-  workflow_run:
-    workflows: ["Deploy VitePress to GitHub Pages"]
-    types: [completed]
+  push:
     branches: [main]
 
 permissions:
-  contents: read
-  actions: read
+  contents: write
 
 concurrency:
   group: app-${{ github.ref }}
@@ -16,30 +13,26 @@ concurrency:
 
 jobs:
   build-android:
-    if: github.event.workflow_run.conclusion == 'success'
     name: Build Android APK + AAB
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Check commit message for version
         id: check
-        env:
-          MSG: ${{ github.event.workflow_run.head_commit.message || github.event.head_commit.message }}
         run: |
-          echo "Commit message:"
+          MSG=$(git log -1 --pretty=%B)
           echo "$MSG"
           if printf '%s' "$MSG" | grep -Eq 'v[0-9]+\.[0-9]+\.[0-9]+'; then
+            VER=$(printf '%s' "$MSG" | grep -Eo 'v[0-9]+\.[0-9]+\.[0-9]+' | head -1)
             echo "match=true" >> "$GITHUB_OUTPUT"
-            echo "Version found -> building"
+            echo "version=$VER" >> "$GITHUB_OUTPUT"
+            echo "Version found -> building ($VER)"
           else
             echo "match=false" >> "$GITHUB_OUTPUT"
             echo "No version -> skipping"
           fi
-
-      - name: Checkout
-        if: steps.check.outputs.match == 'true'
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.workflow_run.head_sha }}
 
       - name: Setup Java
         if: steps.check.outputs.match == 'true'
@@ -59,9 +52,9 @@ jobs:
         if: steps.check.outputs.match == 'true'
         run: npm ci
 
-      - name: Build web + sync into Capacitor
+      - name: Sync Capacitor (no web build needed)
         if: steps.check.outputs.match == 'true'
-        run: npm run cap:sync
+        run: npx cap sync android
 
       - name: Build APK and AAB
         if: steps.check.outputs.match == 'true'
@@ -85,3 +78,14 @@ jobs:
           name: app-bundle
           path: android/app/build/outputs/bundle/release/app-release.aab
           retention-days: 60
+
+      - name: Create GitHub Release
+        if: steps.check.outputs.match == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.check.outputs.version }}
+          name: Philosophy2Go ${{ steps.check.outputs.version }}
+          generate_release_notes: true
+          files: |
+            android/app/build/outputs/apk/debug/app-debug.apk
+            android/app/build/outputs/bundle/release/app-release.aab
