@@ -52,9 +52,11 @@ jobs:
         if: steps.check.outputs.match == 'true'
         run: npm ci
 
-      - name: Sync Capacitor (no web build needed)
+      - name: Setup Capacitor Android
         if: steps.check.outputs.match == 'true'
-        run: npx cap sync android
+        run: |
+          npx cap add android
+          npx cap sync android
 
       - name: Build APK and AAB
         if: steps.check.outputs.match == 'true'
