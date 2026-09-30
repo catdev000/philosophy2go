@@ -14,12 +14,12 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-android:
-    name: Build Android APK + AAB
+  check-version:
+    name: Check for version tag
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.check.outputs.version }}
       match: ${{ steps.check.outputs.match }}
+      version: ${{ steps.check.outputs.version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -36,42 +36,45 @@ jobs:
             echo "Version found -> building ($VER)"
           else
             echo "match=false" >> "$GITHUB_OUTPUT"
-            echo "No version -> skipping"
+            echo "No version -> skipping app build"
           fi
 
+  build-android:
+    name: Build Android APK + AAB
+    needs: check-version
+    if: needs.check-version.outputs.match == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Setup Java
-        if: steps.check.outputs.match == 'true'
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '21'
 
       - name: Setup Node.js
-        if: steps.check.outputs.match == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
 
       - name: Install dependencies
-        if: steps.check.outputs.match == 'true'
         run: npm ci
 
       - name: Setup Capacitor Android
-        if: steps.check.outputs.match == 'true'
         run: |
           mkdir -p android/app/src/main/assets
           npx cap sync android
 
       - name: Build APK and AAB
-        if: steps.check.outputs.match == 'true'
         run: |
           cd android
           ./gradlew assembleDebug
           ./gradlew bundle
 
       - name: Upload APK
-        if: steps.check.outputs.match == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: app-debug-apk
@@ -79,7 +82,6 @@ jobs:
           retention-days: 60
 
       - name: Upload AAB
-        if: steps.check.outputs.match == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: app-bundle
@@ -87,15 +89,15 @@ jobs:
           retention-days: 60
 
       - name: Create GitHub Release
-        if: steps.check.outputs.match == 'true'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ steps.check.outputs.version }}
-          name: Philosophy2Go ${{ steps.check.outputs.version }}
+          tag_name: ${{ needs.check-version.outputs.version }}
+          name: Philosophy2Go ${{ needs.check-version.outputs.version }}
           generate_release_notes: true
           files: |
             android/app/build/outputs/apk/debug/app-debug.apk
             android/app/build/outputs/bundle/release/app-release.aab
+
   deploy-webpage:
     name: Deploy VitePress to GitHub Pages
     runs-on: ubuntu-latest
