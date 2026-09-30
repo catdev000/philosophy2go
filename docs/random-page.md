@@ -8,7 +8,7 @@ onMounted(() => {
         'aristotelianism',
         'absurdism'
     ]
-    const randomPage = '/' + allPages[Math.floor(Math.random() * allPages.length)] + '.html'
+    const randomPage = '/philosophy2go/' + allPages[Math.floor(Math.random() * allPages.length)] + '.html'
     location.replace(randomPage)
 })
 </script>
