@@ -7,7 +7,7 @@ These are four core insights from Stoicism in more detail, grounded in the teach
 
 ::: article
 ## The Dichotomy of Control
-![Image](/images/stoicism_what_you_can_control.jpg)
+![Image Overview what you can control](/images/stoicism_what_you_can_control.jpg)
 This is the cornerstone of Stoic practice. Life is divided into two categories: Within our control: 
 Our own judgments, intentions, actions, and character and outside our control: Reputation, wealth, health, the actions of others, and external events.  
 The insight behind it is that suffering arises when we try to control what we cannot. Peace comes from focusing all your energy on your own responses and accepting everything else as it happens. As Epictetus said, "Freedom is the only worthy goal in human life. It is achieved by mastering what we can control."
@@ -15,8 +15,7 @@ The insight behind it is that suffering arises when we try to control what we ca
 
 ::: article
 ## Perception is Reality
-<img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Kanizsa_triangle.svg/960px-Kanizsa_triangle.svg.png"
-    alt="Image Optical Illusion">
+![Image Optical Illusion"](https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Kanizsa_triangle.svg/960px-Kanizsa_triangle.svg.png)
 Stoics argue that events themselves are neutral; it is our judgment of them that causes harm.  
 The Insight: You are not disturbed by things, but by the view you take of them. If someone insults you, the sound waves are neutral; the "insult" exists only if you judge it to be an injury.  
 Practice: Pause and strip away emotional language. Instead of "This is a disaster," reframe it as "This is an obstacle to practice patience." You control the narrative, not the event.

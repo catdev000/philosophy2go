@@ -2,15 +2,13 @@
 
 :::article
 ## Joseph Overton
-<img src="" 
-    alt="Image of Joseph Overton">
+<strong>No Image available for Joseph Overton</strong>
 Overton formulated the idea of the Overton window to explain the role of think tanks and to persuade potential donors to support policy advocacy. He reasoned that instead of lobbying politicians directly, think tanks should advocate for "unthinkable" or radical ideas to shift public perception; this would make moderate versions of those ideas seem sensible by comparison, eventually allowing them to pass as policy.
 :::
 
 :::article
 ## Explaination
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Overton_Window_diagram.svg"
-    alt="Graphical explaination of Overton Window">
+![Graphical explaination of Overton Window](https://upload.wikimedia.org/wikipedia/commons/f/fb/Overton_Window_diagram.svg)
 Shifting of the Overton Window  
 The sayable is shifted into one side. What is policy moves slowly becomes a radical topic. What was once radical becomes policy. This can be caused by a general shift of opinion in society.  
 Widening of the Overton Window  
