@@ -17,7 +17,7 @@ Phenomenology is zooming in on the interaction between you and the world, breaki
 
 :::article
 ## Jean-Paul Sartre
-![Image of Jean-Paul Sartre](http://upload.wikimedia.org/wikipedia/commons/e/ef/Sartre_1967_crop.jpg){width=150px height=150px}
+![Image of Jean-Paul Sartre](https://upload.wikimedia.org/wikipedia/commons/archive/e/ef/20141223172317%21Sartre_1967_crop.jpg){width=150px height=150px}
 "The Other is Hell" – Sartre turned phenomenology into existentialism. In Being and Nothingness, he distinguished objects (being-in-itself: they just are) from consciousness (being-for-itself: always free, never fixed). That gap is where radical freedom lives — you're "condemned to be free." Bad faith means lying to yourself by pretending you're not free. "Hell is other people" because the Other's gaze objectifies you, turning you into a thing in their world. Later, he merged his philosophy with Marxism, focusing on material conditions and collective action.
 :::
 

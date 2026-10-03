@@ -18,7 +18,7 @@ associated with Christianity).
 
 :::article
 ## Jean-Paul Sartre
-![Image of Jean-Paul Sartre](http://upload.wikimedia.org/wikipedia/commons/e/ef/Sartre_1967_crop.jpg){width=150px height=150px}
+![Image of Jean-Paul Sartre](https://upload.wikimedia.org/wikipedia/commons/archive/e/ef/20141223172317%21Sartre_1967_crop.jpg){width=150px height=150px}
 "Man is condemned to be free" — because there is no divine plan or inherent nature to guide us, we are radically responsible for everything we do. We cannot blame God, nature, or circumstances for our decisions. Although he views humans as radically free, Sartre later attempted to reconcile existentialism with Marxism (in the Critique of Dialectical Reason), acknowledging that historical and material conditions (class, economy) shape the situations in which we choose — without, in his view, removing responsibility. He also describes "the Look" (le regard): the experience of being seen by the other, in which we are objectified — reduced to a fixed thing in another's gaze — and thereby lose our own freedom of self-definition.
 :::
 
